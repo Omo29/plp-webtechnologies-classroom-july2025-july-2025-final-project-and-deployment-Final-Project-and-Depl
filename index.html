@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>OMORO's Jewelry — Home</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <header role="banner" class="container">
+    <div style="position:relative;">
+      <h1>OMORO’s Jewelry Company Ltd</h1>
+      <button class="theme-toggle" id="theme-toggle" aria-pressed="false" aria-label="Toggle theme">🌙 Dark Mode</button>
+      <img src="https://images.pexels.com/photos/258174/pexels-photo-258174.jpeg" alt="Showcase of fine jewelry" />
+      <p id="greeting">Your source for handcrafted fine jewelry.</p>
+    </div>
+  </header>
+
+  <nav role="navigation" aria-label="Main navigation" class="container">
+    <ul>
+      <li><a href="index.html" aria-current="page">Home</a></li>
+      <li><a href="products.html">Products</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <main id="main-content" class="container" role="main">
+    <section id="about-brief" aria-labelledby="about-brief-heading">
+      <h2 id="about-brief-heading">About OMORO’s</h2>
+      <p>Handcrafted gemstone jewelry blending traditional craftsmanship with modern design.</p>
+    </section>
+
+    <section id="featured" aria-labelledby="featured-heading">
+      <h2 id="featured-heading">Featured Products</h2>
+
+      <!-- Gemstone Ring -->
+      <article class="product" data-product="ring" aria-labelledby="ring-title">
+        <div>
+          <h3 id="ring-title">Gemstone Ring</h3>
+          <img src="https://images.pexels.com/photos/1395306/pexels-photo-1395306.jpeg"
+               alt="Gold gemstone ring with ruby" class="product-image" tabindex="0">
+        </div>
+        <div>
+          <p>14K yellow gold ring with hand-set oval ruby. Classic four-prong setting.</p>
+          <ul>
+            <li>Material: 14K yellow gold</li>
+            <li>Gemstone: 8×6 mm natural ruby</li>
+          </ul>
+          <div class="product-counter" aria-live="polite">
+            <span>Interest:</span>
+            <button class="counter-btn" data-product="ring" data-action="decrement" aria-label="Decrease ring interest">-</button>
+            <span class="counter-value" id="ring-counter">0</span>
+            <button class="counter-btn" data-product="ring" data-action="increment" aria-label="Increase ring interest">+</button>
+          </div>
+          <button class="price-calculator" data-price="500" data-product="ring" aria-haspopup="dialog">Calculate Price</button>
+        </div>
+      </article>
+
+      <!-- Pearl Necklace -->
+      <article class="product" data-product="necklace" aria-labelledby="necklace-title">
+        <div>
+          <h3 id="necklace-title">Pearl Necklace</h3>
+          <img src="https://images.pexels.com/photos/33222148/pexels-photo-33222148.jpeg"
+               alt="White pearl necklace draped on a bust" class="product-image" tabindex="0">
+        </div>
+        <div>
+          <p>Freshwater pearls, sterling clasp — timeless and elegant.</p>
+          <ul>
+            <li>Pearls: 8 mm AAA grade</li>
+            <li>Length: 18-inch</li>
+          </ul>
+          <div class="product-counter" aria-live="polite">
+            <span>Interest:</span>
+            <button class="counter-btn" data-product="necklace" data-action="decrement" aria-label="Decrease necklace interest">-</button>
+            <span class="counter-value" id="necklace-counter">0</span>
+            <button class="counter-btn" data-product="necklace" data-action="increment" aria-label="Increase necklace interest">+</button>
+          </div>
+          <button class="price-calculator" data-price="350" data-product="necklace" aria-haspopup="dialog">Calculate Price</button>
+        </div>
+      </article>
+
+    </section>
+
+    <aside id="contact-quick" role="complementary" aria-labelledby="contact-quick-heading">
+      <h2 id="contact-quick-heading">Contact</h2>
+      <p>Email: <a href="mailto:omoroisaac10@gmail.com">omoroisaac10@gmail.com</a></p>
+      <p>Phone: <a href="tel:+254718089186">+254 718 089186</a></p>
+
+      <div class="animation-control">
+        <h3>Animation Demo</h3>
+        <button id="start-animation">Start Animation</button>
+        <button id="stop-animation">Stop Animation</button>
+      </div>
+    </aside>
+
+    <section id="more" aria-labelledby="more-heading">
+      <h2 id="more-heading">Explore More</h2>
+      <div class="page-cards">
+        <div class="page-card">
+          <h3>Products</h3>
+          <p>Browse our full collection.</p>
+          <a href="products.html" class="btn">View Products</a>
+        </div>
+        <div class="page-card">
+          <h3>About</h3>
+          <p>Learn about our story and craft.</p>
+          <a href="about.html" class="btn">About Us</a>
+        </div>
+        <div class="page-card">
+          <h3>Services</h3>
+          <p>Custom design and repairs.</p>
+          <a href="services.html" class="btn">Our Services</a>
+        </div>
+        <div class="page-card">
+          <h3>Contact</h3>
+          <p>Get in touch with our team.</p>
+          <a href="contact.html" class="btn">Contact</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-hidden="true">
+    <button class="lightbox-close" id="lightbox-close" aria-label="Close image viewer">&times;</button>
+    <img class="lightbox-content" id="lightbox-image" src="" alt="">
+  </div>
+
+  <!-- Price Modal (shared across pages) -->
+  <div class="modal" id="price-modal" role="dialog" aria-labelledby="price-modal-title" aria-hidden="true">
+    <div class="modal-panel">
+      <h3 id="price-modal-title">Price Calculator</h3>
+      <form id="price-form">
+        <label>
+          Quantity
+          <input type="number" id="calc-quantity" min="1" value="1" required>
+        </label>
+        <label>
+          State (for tax)
+          <select id="calc-state" required>
+            <option value="CA">CA</option>
+            <option value="NY">NY</option>
+            <option value="TX">TX</option>
+            <option value="FL">FL</option>
+          </select>
+        </label>
+        <p id="price-result" aria-live="polite"></p>
+        <div class="modal-actions" style="display:flex;gap:.5rem;margin-top:.5rem">
+          <button type="submit" id="calc-submit">Calculate</button>
+          <button type="button" id="calc-cancel">Cancel</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <button id="back-to-top" aria-label="Back to top">↑</button>
+
+  <footer role="contentinfo" class="container">
+    <p>&copy; 2025 OMORO’s Company Ltd. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>

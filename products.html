@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>OMORO's Jewelry — Products</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <header role="banner" class="container">
+    <div style="position:relative;">
+      <h1>OMORO’s Jewelry Company Ltd</h1>
+      <button class="theme-toggle" id="theme-toggle" aria-pressed="false" aria-label="Toggle theme">🌙 Dark Mode</button>
+      <img src="https://images.pexels.com/photos/325153/pexels-photo-325153.jpeg" alt="Jewelry showcase" />
+      <p id="greeting">Our curated collection — handcrafted with care.</p>
+    </div>
+  </header>
+
+  <nav role="navigation" aria-label="Main navigation" class="container">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="products.html" aria-current="page">Products</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <main id="main-content" class="container" role="main">
+    <section id="products-list" aria-labelledby="products-heading">
+      <h2 id="products-heading">All Products</h2>
+
+      <!-- Product A -->
+      <article class="product" data-product="ring" aria-labelledby="p-ring">
+        <div>
+          <h3 id="p-ring">Emerald Halo Ring</h3>
+          <img src="https://images.pexels.com/photos/1395306/pexels-photo-1395306.jpeg"
+               alt="Emerald halo ring" class="product-image" tabindex="0">
+        </div>
+        <div>
+          <p>14K gold with natural emerald and halo diamonds.</p>
+          <div class="product-counter">
+            <span>Interest:</span>
+            <button class="counter-btn" data-product="ring" data-action="decrement">-</button>
+            <span class="counter-value" id="ring-counter-products">0</span>
+            <button class="counter-btn" data-product="ring" data-action="increment">+</button>
+          </div>
+          <button class="price-calculator" data-price="650" data-product="ring">Calculate Price</button>
+        </div>
+      </article>
+
+      <!-- Product B -->
+      <article class="product" data-product="necklace" aria-labelledby="p-necklace">
+        <div>
+          <h3 id="p-necklace">Classic Pearl Strand</h3>
+          <img src="https://images.pexels.com/photos/33222148/pexels-photo-33222148.jpeg"
+               alt="Classic pearl strand" class="product-image" tabindex="0">
+        </div>
+        <div>
+          <p>18-inch freshwater pearl strand with sterling clasp.</p>
+          <div class="product-counter">
+            <span>Interest:</span>
+            <button class="counter-btn" data-product="necklace" data-action="decrement">-</button>
+            <span class="counter-value" id="necklace-counter-products">0</span>
+            <button class="counter-btn" data-product="necklace" data-action="increment">+</button>
+          </div>
+          <button class="price-calculator" data-price="380" data-product="necklace">Calculate Price</button>
+        </div>
+      </article>
+
+      <!-- Product C (Earrings) -->
+      <article class="product" data-product="earrings" aria-labelledby="p-earrings">
+        <div>
+          <h3 id="p-earrings">Drop Sapphire Earrings</h3>
+          <img src="https://images.pexels.com/photos/169466/pexels-photo-169466.jpeg"
+               alt="Sapphire drop earrings" class="product-image" tabindex="0">
+        </div>
+        <div>
+          <p>Sapphire drops set in sterling silver — elegant for evening wear.</p>
+          <div class="product-counter">
+            <span>Interest:</span>
+            <button class="counter-btn" data-product="earrings" data-action="decrement">-</button>
+            <span class="counter-value" id="earrings-counter-products">0</span>
+            <button class="counter-btn" data-product="earrings" data-action="increment">+</button>
+          </div>
+          <button class="price-calculator" data-price="290" data-product="earrings">Calculate Price</button>
+        </div>
+      </article>
+
+    </section>
+  </main>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-hidden="true">
+    <button class="lightbox-close" id="lightbox-close" aria-label="Close image viewer">&times;</button>
+    <img class="lightbox-content" id="lightbox-image" src="" alt="">
+  </div>
+
+  <!-- Price Modal -->
+  <div class="modal" id="price-modal" role="dialog" aria-labelledby="price-modal-title" aria-hidden="true">
+    <div class="modal-panel">
+      <h3 id="price-modal-title">Price Calculator</h3>
+      <form id="price-form">
+        <label>
+          Quantity
+          <input type="number" id="calc-quantity" min="1" value="1" required>
+        </label>
+        <label>
+          State (for tax)
+          <select id="calc-state" required>
+            <option value="CA">CA</option>
+            <option value="NY">NY</option>
+            <option value="TX">TX</option>
+            <option value="FL">FL</option>
+          </select>
+        </label>
+        <p id="price-result" aria-live="polite"></p>
+        <div class="modal-actions" style="display:flex;gap:.5rem;margin-top:.5rem">
+          <button type="submit" id="calc-submit">Calculate</button>
+          <button type="button" id="calc-cancel">Cancel</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <button id="back-to-top" aria-label="Back to top">↑</button>
+
+  <footer role="contentinfo" class="container">
+    <p>&copy; 2025 OMORO’s Company Ltd. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>

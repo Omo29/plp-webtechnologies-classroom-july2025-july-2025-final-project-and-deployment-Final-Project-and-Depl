@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>OMORO's Jewelry — About</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <header role="banner" class="container">
+    <div style="position:relative;">
+      <h1>OMORO’s Jewelry Company Ltd</h1>
+      <button class="theme-toggle" id="theme-toggle" aria-pressed="false" aria-label="Toggle theme">🌙 Dark Mode</button>
+      <img src="https://images.pexels.com/photos/206520/pexels-photo-206520.jpeg" alt="Jewelry craftsman at work" />
+      <p id="greeting">Our story is told in every handcrafted piece.</p>
+    </div>
+  </header>
+
+  <nav role="navigation" aria-label="Main navigation" class="container">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="products.html">Products</a></li>
+      <li><a href="about.html" aria-current="page">About</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <main id="main-content" class="container" role="main">
+    <section id="our-mission" aria-labelledby="mission-heading">
+      <h2 id="mission-heading">Our Mission</h2>
+      <p data-animate="reveal">To craft meaningful jewelry that celebrates life's moments — ethically sourced and thoughtfully made.</p>
+    </section>
+
+    <section id="our-craft" aria-labelledby="craft-heading">
+      <h2 id="craft-heading">Craft & Process</h2>
+      <article data-animate="reveal">
+        <h3>Design</h3>
+        <p>Each design starts with a sketch and evolves through careful selection of stones and metal.</p>
+      </article>
+      <article data-animate="reveal">
+        <h3>Handwork</h3>
+        <p>Skilled artisans set, polish, and finish each piece by hand.</p>
+      </article>
+    </section>
+
+    <aside id="team" role="complementary" aria-labelledby="team-heading">
+      <h2 id="team-heading">Meet the Team</h2>
+      <p data-animate="reveal">Our artisans bring decades of experience and close attention to detail.</p>
+    </aside>
+  </main>
+
+  <!-- Shared Lightbox & Modal -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-hidden="true">
+    <button class="lightbox-close" id="lightbox-close" aria-label="Close image viewer">&times;</button>
+    <img class="lightbox-content" id="lightbox-image" src="" alt="">
+  </div>
+
+  <div class="modal" id="price-modal" role="dialog" aria-labelledby="price-modal-title" aria-hidden="true">
+    <div class="modal-panel">
+      <h3 id="price-modal-title">Price Calculator</h3>
+      <form id="price-form">
+        <label>
+          Quantity
+          <input type="number" id="calc-quantity" min="1" value="1" required>
+        </label>
+        <label>
+          State (for tax)
+          <select id="calc-state" required>
+            <option value="CA">CA</option>
+            <option value="NY">NY</option>
+            <option value="TX">TX</option>
+            <option value="FL">FL</option>
+          </select>
+        </label>
+        <p id="price-result" aria-live="polite"></p>
+        <div class="modal-actions" style="display:flex;gap:.5rem;margin-top:.5rem">
+          <button type="submit" id="calc-submit">Calculate</button>
+          <button type="button" id="calc-cancel">Cancel</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <button id="back-to-top" aria-label="Back to top">↑</button>
+
+  <footer role="contentinfo" class="container">
+    <p>&copy; 2025 OMORO’s Company Ltd. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>

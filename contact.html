@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>OMORO's Jewelry — Contact</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <header role="banner" class="container">
+    <div style="position:relative;">
+      <h1>OMORO’s Jewelry Company Ltd</h1>
+      <button class="theme-toggle" id="theme-toggle" aria-pressed="false" aria-label="Toggle theme">🌙 Dark Mode</button>
+      <img src="https://images.pexels.com/photos/3757947/pexels-photo-3757947.jpeg" alt="Customer service" />
+      <p id="greeting">We'd love to hear from you — send a message below.</p>
+    </div>
+  </header>
+
+  <nav role="navigation" aria-label="Main navigation" class="container">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="products.html">Products</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="contact.html" aria-current="page">Contact</a></li>
+    </ul>
+  </nav>
+
+  <main id="main-content" class="container" role="main">
+    <section id="contact-form-section" aria-labelledby="contact-form-heading">
+      <h2 id="contact-form-heading">Contact Us</h2>
+      <form id="contact-form" novalidate>
+        <fieldset>
+          <legend>Send us a message</legend>
+
+          <label for="name">Full name</label>
+          <input id="name" name="name" type="text" required placeholder="Your full name">
+
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" required placeholder="you@example.com">
+
+          <label for="phone">Phone</label>
+          <input id="phone" name="phone" type="tel" placeholder="+254 7xx xxx xxx">
+
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="6" required placeholder="How can we help?"></textarea>
+
+          <button type="submit" class="btn">Send Message</button>
+          <p id="contact-feedback" aria-live="polite" style="margin-top:.5rem"></p>
+        </fieldset>
+      </form>
+    </section>
+  </main>
+
+  <!-- Shared modal & lightbox -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-hidden="true">
+    <button class="lightbox-close" id="lightbox-close" aria-label="Close image viewer">&times;</button>
+    <img class="lightbox-content" id="lightbox-image" src="" alt="">
+  </div>
+
+  <div class="modal" id="price-modal" role="dialog" aria-labelledby="price-modal-title" aria-hidden="true">
+    <div class="modal-panel">
+      <h3 id="price-modal-title">Price Calculator</h3>
+      <form id="price-form">
+        <label>
+          Quantity
+          <input type="number" id="calc-quantity" min="1" value="1" required>
+        </label>
+        <label>
+          State (for tax)
+          <select id="calc-state" required>
+            <option value="CA">CA</option>
+            <option value="NY">NY</option>
+            <option value="TX">TX</option>
+            <option value="FL">FL</option>
+          </select>
+        </label>
+        <p id="price-result" aria-live="polite"></p>
+        <div class="modal-actions" style="display:flex;gap:.5rem;margin-top:.5rem">
+          <button type="submit" id="calc-submit">Calculate</button>
+          <button type="button" id="calc-cancel">Cancel</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <button id="back-to-top" aria-label="Back to top">↑</button>
+
+  <footer role="contentinfo" class="container">
+    <p>&copy; 2025 OMORO’s Company Ltd. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js" defer></script>
+  <script>
+    // Basic client-side contact form validation + demo submit handler
+    document.addEventListener('DOMContentLoaded', () => {
+      const form = document.getElementById('contact-form');
+      const feedback = document.getElementById('contact-feedback');
+
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        feedback.textContent = '';
+        const name = document.getElementById('name').value.trim();
+        const email = document.getElementById('email').value.trim();
+        const message = document.getElementById('message').value.trim();
+
+        if (!name || !email || !message) {
+          feedback.textContent = 'Please fill in name, email and message.';
+          feedback.style.color = 'var(--accent-color)';
+          return;
+        }
+        // rudimentary email format check
+        const emailOK = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+        if (!emailOK) {
+          feedback.textContent = 'Please provide a valid email address.';
+          feedback.style.color = 'var(--accent-color)';
+          return;
+        }
+
+        // Simulate send (replace with real endpoint when ready)
+        feedback.style.color = 'var(--primary-color)';
+        feedback.textContent = 'Sending...';
+        setTimeout(() => {
+          feedback.textContent = 'Thank you — your message was sent (demo). We will contact you soon.';
+          form.reset();
+        }, 800);
+      });
+    });
+  </script>
+</body>
+</html>
